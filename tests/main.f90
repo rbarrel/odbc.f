@@ -2,7 +2,7 @@
 #include <c_interop.inc>
 TESTPROGRAM(main)
     
-    TEST(test_alloc_env)
+    TEST('test_alloc_env')
         use odbc
    
         integer(c_short) :: err
@@ -13,7 +13,7 @@ TESTPROGRAM(main)
         EXPECT_EQ(SQLFreeHandle(SQL_HANDLE_ENV, env), SQL_SUCCESS)
     END_TEST
     
-    TEST(test_set_version)
+    TEST('test_set_version')
         use odbc
    
         integer(SQLRETURN) :: err
@@ -32,7 +32,7 @@ TESTPROGRAM(main)
         EXPECT_EQ(SQLFreeHandle(SQL_HANDLE_ENV, env), SQL_SUCCESS)
     END_TEST
     
-    TEST(test_drivers)
+    TEST('test_drivers')
         use odbc
    
         integer(SQLRETURN) :: err
@@ -59,7 +59,7 @@ TESTPROGRAM(main)
         EXPECT_EQ(SQLFreeHandle(SQL_HANDLE_ENV, env), SQL_SUCCESS)
     END_TEST
     
-    TEST(test_datasources)
+    TEST('test_datasources')
         use odbc
    
         integer(SQLRETURN) :: err
@@ -82,7 +82,7 @@ TESTPROGRAM(main)
         EXPECT_EQ(SQLFreeHandle(SQL_HANDLE_ENV, env), SQL_SUCCESS)
     END_TEST
     
-    TEST(test_access)
+    TEST('test_access')
         use odbc
    
         integer(c_short) :: err
@@ -163,7 +163,7 @@ TESTPROGRAM(main)
 
     !The following test cases have been inspired by the ones found at 
     !https://github.com/mlt/fodbc
-    TEST(test_excel)
+    TEST('test_excel')
         use odbc
    
         integer(c_short) :: err, lens
@@ -237,7 +237,7 @@ TESTPROGRAM(main)
         if (ierr == 0) close(lu, status='delete')
     END_TEST
 
-    TEST(test_excel_oop)
+    TEST('test_excel_oop')
         use odbc_connection
    
         type(connection) :: conn
@@ -268,7 +268,7 @@ TESTPROGRAM(main)
         if (ierr == 0) close(lu, status='delete')
     END_TEST
     
-    TEST(test_access_oop)
+    TEST('test_access_oop')
         use odbc_connection
    
         type(connection)        :: conn
