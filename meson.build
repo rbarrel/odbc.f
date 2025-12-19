@@ -1,7 +1,6 @@
 project(
   'odbc.f',
   'fortran',
-  'cpp',
   version: '1.0.0',
 )
 
